@@ -109,7 +109,8 @@ TArray<UTutorialConnectionManager*> FTeamConnectionListMap::GetVisibleConnection
 					const FVector TraceEnd = ConnectionManager->Pawn.Get()->GetActorLocation() + TraceOffset;
 					if (!World->LineTraceSingleByChannel(OutHit, TraceStart, TraceEnd, ECC_GameTraceChannel1, TraceParams))
 					{
-						NonTeamConnections.Add(ConnectionManager);		
+						// test hide all non team
+						//NonTeamConnections.Add(ConnectionManager);
 					}
 				}
 			}
@@ -139,7 +140,7 @@ void FTeamConnectionListMap::RemoveConnectionFromTeam(int32 Team, UTutorialConne
 	}
 }
 
-UTutorialRepGraph::UTutorialRepGraph()
+UTutorialRepGraph::UTutorialRepGraph(): AlwaysRelevantNode(nullptr)
 {
 	// Specify the connection graph class to use
 	ReplicationConnectionManagerClass = UTutorialConnectionManager::StaticClass();
