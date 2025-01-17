@@ -24,9 +24,6 @@ public:
 
 	UFUNCTION(BlueprintCallable, Server, Reliable)
 	void SetTeam(int32 InTeam);
-	/*{
-		Team = InTeam;
-	}*/
 
 	// on server
 	void SetTeam_Implementation(int32 InTeam);

@@ -263,6 +263,10 @@ void UTutorialRepGraph::RouteAddNetworkActorToNodes(const FNewReplicatedActorInf
 		// Add to PendingConnectionActors if the net connection is not ready yet
 		PendingConnectionActors.Add(ActorInfo.GetActor());
 	}
+	else
+	{
+		AlwaysRelevantNode->NotifyAddNetworkActor(ActorInfo);
+	}
 }
 
 void UTutorialRepGraph::RouteRemoveNetworkActorToNodes(const FNewReplicatedActorInfo& ActorInfo)

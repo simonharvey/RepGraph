@@ -6,7 +6,7 @@
 
 void ATutorialPlayerState::OnRep_Team(int32 OldTeam) const
 {
-	UE_LOG(LogTemp, Warning, TEXT("OnRep_Team %i -> %i"), OldTeam, Team);
+	//UE_LOG(LogTemp, Warning, TEXT("OnRep_Team %i -> %i"), OldTeam, Team);
 	
 	OnTeamChange.Broadcast(Team);
 }
